@@ -28,7 +28,7 @@
               </vue-load-image>
             </div>
             <div class="media-content">
-              {{ props.option.site}}<br/>
+              {{ props.option.scene_id}}<br/>
               <div class="truncate"><strong>{{ props.option.title }}</strong></div>
               <div style="margin-top:0.5em">
                 <small>
