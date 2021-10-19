@@ -258,7 +258,11 @@ func (i FilesResource) removeFile(req *restful.Request, resp *restful.Response) 
 			if err == nil {
 				deleted = true
 			} else {
-				log.Errorf("Error deleting file ", err)
+				if os.IsNotExist(err){
+					deleted = true
+				} else {
+					log.Errorf("Error deleting file ", err)
+				}
 			}
 		case "putio":
 			id, err := strconv.ParseInt(file.Path, 10, 64)
