@@ -322,7 +322,7 @@ func (i DeoVRResource) getDeoScene(req *restful.Request, resp *restful.Response)
 		var height = file.VideoHeight
 		var width = file.VideoWidth
 		var source = DeoSceneEncoding{
-			Name: fmt.Sprintf("File %v/%v %vp - %v", i+1, len(videoFiles), file.VideoHeight, humanize.Bytes(uint64(file.Size))),
+			Name: fmt.Sprintf("%v %v/%v %vp - %v", file.Filename, i+1, len(videoFiles), file.VideoHeight, humanize.Bytes(uint64(file.Size))),
 			VideoSources: []DeoSceneVideoSource{
 				{
 					Resolution: height,
