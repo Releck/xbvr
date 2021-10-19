@@ -212,7 +212,7 @@ func (o *Scene) GetVideoFiles() ([]File, error) {
 	defer db.Close()
 
 	var files []File
-	db.Preload("Volume").Where("scene_id = ? AND type = ?", o.ID, "video").Find(&files)
+	db.Preload("Volume").Where("scene_id = ? AND type = ?", o.ID, "video").Order("filename").Find(&files)
 
 	return files, nil
 }
